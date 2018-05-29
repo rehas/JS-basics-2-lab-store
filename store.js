@@ -13,7 +13,7 @@
 // X 3. Note: Use array method Array.find -> test
 
 // X 4. Add the product we want using findProduct to the cart in the addToCart function -> check with log
-// 5. Print the cart to the screen
+// X 5. Print the cart to the screen
 // 5a. Format printing to the screen in a nice way
 // 6. Have beer, celebrate
 
@@ -63,8 +63,11 @@ var shopFromStore =  function () {
 
 var displayProductsFromShoppingCart = function() {
   // iterate over the shoppingCart and display the contents
-
-  // use the printProductsOnScreen function for inspiration
+  console.log(shoppingCart);
+  var shoppingCartContainer = document.getElementById('shopping-cart')
+  console.log(shoppingCartContainer);
+  shoppingCartContainer.innerHTML = shoppingCart[0].name
+  
 };
 
 var askUserForReferenceNumber = function() {

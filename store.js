@@ -1,9 +1,12 @@
 // TODO: User should be able to select a product by its referenceNumber and it will be added to the shopping cart.
 // X 1. Create an inputfield to enter referenceNumber -> used window.prompt, checked with console log
 
-// 2. Create ok button when clicked it calls a function addToCart -> console.log('I got clicked')
-// 2a. addToCart should be able to log the userinput (referenceNumber)
-// 2b. addToCart should be able to log the shoppingCart // addToCart not complete -> leave for now
+// X 2. Create ok button when clicked it calls a function addToCart -> console.log('I got clicked')
+// X Note -> Plan changed, we used window.prompt instead of a button
+// X 2a. addToCart should be able to log the userinput (referenceNumber)
+// X Note -> We are already able to log the userinput by using window.prompt
+// X 2b. addToCart should be able to log the shoppingCart // addToCart not complete -> leave for now
+// X Note -> We can log the shoppingcart in shopFromStore, we can access it 
 
 // 3. Write a separate function: findProduct(referenceNumber) -> returns the product we want 
 // 3. findProduct(1231) should return { referenceNumber: 1231, name: "Super Lite Mat", price: 10 }
@@ -32,7 +35,9 @@ var shopFromStore =  function () {
   var refNr = askUserForReferenceNumber();
   // Add the product with the matching referenceNumber to the shoppingCart
 
-  console.log(refNr);
+  console.log(refNr, 'reference number from userinput');
+  console.log(shoppingCart, 'shoppingCart');
+  
 
   displayProductsFromShoppingCart();
 

@@ -31,12 +31,20 @@ var products = [
   { referenceNumber: 1238, name: "Light On Yoga", price: 10 }
 ]
 
+var findProduct = function(userInput) {
+  return products.find(function(product){
+    console.log(product, userInput);
+  })
+}
+
 var shopFromStore =  function () {
   var refNr = askUserForReferenceNumber();
   // Add the product with the matching referenceNumber to the shoppingCart
 
   console.log(refNr, 'reference number from userinput');
   console.log(shoppingCart, 'shoppingCart');
+
+  productSelected = findProduct(1234) // checking with hardcoded value for now
   
 
   displayProductsFromShoppingCart();

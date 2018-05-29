@@ -14,8 +14,8 @@
 
 // X 4. Add the product we want using findProduct to the cart in the addToCart function -> check with log
 // X 5. Print the cart to the screen
-// 5a. Format printing to the screen in a nice way
-// 6. Have beer, celebrate
+// X 5a. Format printing to the screen in a nice way
+// X 6. Have beer, celebrate
 
 // Declare `shoppingCart`, something where you will be storing all products that the user buys.
 var shoppingCart = []

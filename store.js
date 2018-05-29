@@ -1,21 +1,16 @@
-// TODO: User should be able to select a product by its referenceNumber and it will be added to the shopping cart.
-// X 1. Create an inputfield to enter referenceNumber -> used window.prompt, checked with console log
+// TODO: 2. Every time that user buys a new product, the current shopping cart should be printed out. 
+// Don't forget to update the total price to be paid
 
-// X 2. Create ok button when clicked it calls a function addToCart -> console.log('I got clicked')
-// X Note -> Plan changed, we used window.prompt instead of a button
-// X 2a. addToCart should be able to log the userinput (referenceNumber)
-// X Note -> We are already able to log the userinput by using window.prompt
-// X 2b. addToCart should be able to log the shoppingCart // addToCart not complete -> leave for now
-// X Note -> We can log the shoppingcart in shopFromStore, we can access it 
-
-// X 3. Write a separate function: findProduct(referenceNumber) -> returns the product we want 
-// X 3. findProduct(1231) should return { referenceNumber: 1231, name: "Super Lite Mat", price: 10 }
-// X 3. Note: Use array method Array.find -> test
-
-// X 4. Add the product we want using findProduct to the cart in the addToCart function -> check with log
-// X 5. Print the cart to the screen
-// X 5a. Format printing to the screen in a nice way
-// X 6. Have beer, celebrate
+// 1. Make a 'shop' button that the user can click that will call a function
+// 1a. Check if the function gets called with console log
+// 2. Make the shop button call shopFromStore button
+// 2a. Check with console log if the cart gets updated correctly
+// 3. Print out the contents of the shoppingCart -> reuse displayProductsFromShoppingCart
+// 4. Write a function calculateTotalPrice that calculates the total amount the user needs to pay
+// 4a. Try to use Array.reduce()
+// 4b. Check with console log if it's working
+// 5. Display the new total price that we calculated -> reuse displayTotalPrice
+// 6. Do victory dance 
 
 // Declare `shoppingCart`, something where you will be storing all products that the user buys.
 var shoppingCart = []

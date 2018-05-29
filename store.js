@@ -36,7 +36,6 @@ var findProduct = function(userInput) {
 }
 
 function getSum(total, product) {
-  console.log(total.price, product);
   return total + product.price;
 }
 var calculateTotalPrice = function(productsArray){
@@ -49,12 +48,7 @@ var shopFromStore =  function () {
   var productSelected = findProduct(parseInt(refNr))
   // Add the selectedProduct to the shoppingCart
   shoppingCart.push(productSelected)
-
-  console.log(refNr, 'reference number from userinput');
-  console.log(shoppingCart, 'shoppingCart');
-  console.log(productSelected, 'product selected by user');
   
-
   displayProductsFromShoppingCart();
 
   var totalPrice = calculateTotalPrice(shoppingCart)

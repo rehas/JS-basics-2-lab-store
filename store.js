@@ -8,9 +8,9 @@
 // X 2b. addToCart should be able to log the shoppingCart // addToCart not complete -> leave for now
 // X Note -> We can log the shoppingcart in shopFromStore, we can access it 
 
-// 3. Write a separate function: findProduct(referenceNumber) -> returns the product we want 
-// 3. findProduct(1231) should return { referenceNumber: 1231, name: "Super Lite Mat", price: 10 }
-// 3. Note: Use array method Array.find -> test
+// X 3. Write a separate function: findProduct(referenceNumber) -> returns the product we want 
+// X 3. findProduct(1231) should return { referenceNumber: 1231, name: "Super Lite Mat", price: 10 }
+// X 3. Note: Use array method Array.find -> test
 
 // 4. Add the product we want using findProduct to the cart in the addToCart function -> check with log
 // 5. Print the cart to the screen
@@ -32,9 +32,11 @@ var products = [
 ]
 
 var findProduct = function(userInput) {
-  return products.find(function(product){
-    console.log(product, userInput);
+  var foundProduct = products.find(function(product){
+    return product.referenceNumber === userInput
   })
+
+  return foundProduct
 }
 
 var shopFromStore =  function () {
@@ -44,7 +46,9 @@ var shopFromStore =  function () {
   console.log(refNr, 'reference number from userinput');
   console.log(shoppingCart, 'shoppingCart');
 
-  productSelected = findProduct(1234) // checking with hardcoded value for now
+  productSelected = findProduct(parseInt(refNr))
+  
+  console.log(productSelected, 'product selected by user');
   
 
   displayProductsFromShoppingCart();

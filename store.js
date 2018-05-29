@@ -12,6 +12,10 @@
 // 5. Display the new total price that we calculated -> reuse displayTotalPrice
 // 6. Do victory dance 
 
+function myFunction(){
+  console.log('I got clicked!');
+}
+
 // Declare `shoppingCart`, something where you will be storing all products that the user buys.
 var shoppingCart = []
 // Declare `products`, the different that you will be selling under each of the departments.

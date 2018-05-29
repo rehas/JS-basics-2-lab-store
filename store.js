@@ -5,7 +5,8 @@
 // X 1a. Check if the function gets called with console log
 // X 2. Make the shop button call shopFromStore button
 // X 2a. Check with console log if the cart gets updated correctly
-// 3. Print out the contents of the shoppingCart -> reuse displayProductsFromShoppingCart
+// X 3. Print out the contents of the shoppingCart -> reuse displayProductsFromShoppingCart
+// X 3. Note: Had to write some code to clear the items that are currently displayed
 // 4. Write a function calculateTotalPrice that calculates the total amount the user needs to pay
 // 4a. Try to use Array.reduce()
 // 4b. Check with console log if it's working
@@ -57,8 +58,14 @@ var shopFromStore =  function () {
 };
 
 var displayProductsFromShoppingCart = function() {
+  var shoppingCartElement = document.getElementById('shopping-cart');
+
+  // Clear the items that are currently displayed
+  while (shoppingCartElement.firstChild) {
+      shoppingCartElement.removeChild(shoppingCartElement.firstChild);
+  }
+
   // iterate over the shoppingCart and display the contents
-  
   for(var product of shoppingCart){
     var referenceNumberElement = document.createElement('span');
     referenceNumberElement.className  = 'referenceNumber';
@@ -81,7 +88,7 @@ var displayProductsFromShoppingCart = function() {
     productElement.appendChild(priceElement);
 
     // Hang that div on the page
-    document.getElementById('shopping-cart').appendChild(productElement);
+    shoppingCartElement.appendChild(productElement);
   }
 };
 

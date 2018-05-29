@@ -1,4 +1,19 @@
-// TODO:
+// TODO: User should be able to select a product by its referenceNumber and it will be added to the shopping cart.
+// 1. Create an inputfield to enter referenceNumber
+
+// 2. Create ok button when clicked it calls a function addToCart -> console.log('I got clicked')
+// 2a. addToCart should be able to log the userinput (referenceNumber)
+// 2b. addToCart should be able to log the shoppingCart // addToCart not complete -> leave for now
+
+// 3. Write a separate function: findProduct(referenceNumber) -> returns the product we want 
+// 3. findProduct(1231) should return { referenceNumber: 1231, name: "Super Lite Mat", price: 10 }
+// 3. Note: Use array method Array.find -> test
+
+// 4. Add the product we want using findProduct to the cart in the addToCart function -> check with log
+// 5. Print the cart to the screen
+// 5a. Format printing to the screen in a nice way
+// 6. Have beer, celebrate
+
 // Declare `shoppingCart`, something where you will be storing all products that the user buys.
 var shoppingCart = []
 // Declare `products`, the different that you will be selling under each of the departments.

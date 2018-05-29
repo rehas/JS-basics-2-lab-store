@@ -63,11 +63,31 @@ var shopFromStore =  function () {
 
 var displayProductsFromShoppingCart = function() {
   // iterate over the shoppingCart and display the contents
-  console.log(shoppingCart);
-  var shoppingCartContainer = document.getElementById('shopping-cart')
-  console.log(shoppingCartContainer);
-  shoppingCartContainer.innerHTML = shoppingCart[0].name
   
+  for(var product of shoppingCart){
+    var referenceNumberElement = document.createElement('span');
+    referenceNumberElement.className  = 'referenceNumber';
+    referenceNumberElement.innerText = product.referenceNumber;
+
+    var nameElement = document.createElement('span');
+    nameElement.className  = 'name';
+    nameElement.innerText = product.name;
+
+    var priceElement = document.createElement('span');
+    priceElement.className  = 'price';
+    priceElement.innerText = product.price;
+
+    // Wrap our just created elements in a div
+    var productElement = document.createElement('div');
+    productElement.className = 'product';
+
+    productElement.appendChild(referenceNumberElement);
+    productElement.appendChild(nameElement);
+    productElement.appendChild(priceElement);
+
+    // Hang that div on the page
+    document.getElementById('shopping-cart').appendChild(productElement);
+  }
 };
 
 var askUserForReferenceNumber = function() {

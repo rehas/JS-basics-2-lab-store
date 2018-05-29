@@ -12,7 +12,7 @@
 // X 3. findProduct(1231) should return { referenceNumber: 1231, name: "Super Lite Mat", price: 10 }
 // X 3. Note: Use array method Array.find -> test
 
-// 4. Add the product we want using findProduct to the cart in the addToCart function -> check with log
+// X 4. Add the product we want using findProduct to the cart in the addToCart function -> check with log
 // 5. Print the cart to the screen
 // 5a. Format printing to the screen in a nice way
 // 6. Have beer, celebrate
@@ -41,13 +41,13 @@ var findProduct = function(userInput) {
 
 var shopFromStore =  function () {
   var refNr = askUserForReferenceNumber();
-  // Add the product with the matching referenceNumber to the shoppingCart
+  // Find the product with the matching referenceNumber
+  var productSelected = findProduct(parseInt(refNr))
+  // Add the selectedProduct to the shoppingCart
+  shoppingCart.push(productSelected)
 
   console.log(refNr, 'reference number from userinput');
   console.log(shoppingCart, 'shoppingCart');
-
-  productSelected = findProduct(parseInt(refNr))
-  
   console.log(productSelected, 'product selected by user');
   
 

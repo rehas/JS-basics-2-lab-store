@@ -1,20 +1,16 @@
 // TODO: 2. Every time that user buys a new product, the current shopping cart should be printed out. 
 // Don't forget to update the total price to be paid
 
-// 1. Make a 'shop' button that the user can click that will call a function
-// 1a. Check if the function gets called with console log
-// 2. Make the shop button call shopFromStore button
-// 2a. Check with console log if the cart gets updated correctly
+// X 1. Make a 'shop' button that the user can click that will call a function
+// X 1a. Check if the function gets called with console log
+// X 2. Make the shop button call shopFromStore button
+// X 2a. Check with console log if the cart gets updated correctly
 // 3. Print out the contents of the shoppingCart -> reuse displayProductsFromShoppingCart
 // 4. Write a function calculateTotalPrice that calculates the total amount the user needs to pay
 // 4a. Try to use Array.reduce()
 // 4b. Check with console log if it's working
 // 5. Display the new total price that we calculated -> reuse displayTotalPrice
 // 6. Do victory dance 
-
-function myFunction(){
-  console.log('I got clicked!');
-}
 
 // Declare `shoppingCart`, something where you will be storing all products that the user buys.
 var shoppingCart = []

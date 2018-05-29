@@ -39,12 +39,9 @@ function getSum(total, product) {
   console.log(total.price, product);
   return total + product.price;
 }
-var calculateTotalPrice = function(){
-  return products.reduce(getSum, 0)
-}
-
-console.log(calculateTotalPrice());
- 
+var calculateTotalPrice = function(productsArray){
+  return productsArray.reduce(getSum, 0)
+} 
 
 var shopFromStore =  function () {
   var refNr = askUserForReferenceNumber();
@@ -60,8 +57,9 @@ var shopFromStore =  function () {
 
   displayProductsFromShoppingCart();
 
+  var totalPrice = calculateTotalPrice(shoppingCart)
   // calculate the total price of your cart, and use it:
-  displayTotalPrice(/*The variable holding the totol price*/);
+  displayTotalPrice(totalPrice);
 
   // Ask the user if they want to continue shopping,
   // if yes, call this function again

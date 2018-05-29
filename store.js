@@ -8,8 +8,8 @@
 // X 3. Print out the contents of the shoppingCart -> reuse displayProductsFromShoppingCart
 // X 3. Note: Had to write some code to clear the items that are currently displayed
 // 4. Write a function calculateTotalPrice that calculates the total amount the user needs to pay
-// 4a. Try to use Array.reduce()
-// 4b. Check with console log if it's working
+// X 4a. Try to use Array.reduce()
+// X 4b. Check with console log if it's working
 // 5. Display the new total price that we calculated -> reuse displayTotalPrice
 // 6. Do victory dance 
 
@@ -34,6 +34,17 @@ var findProduct = function(userInput) {
 
   return foundProduct
 }
+
+function getSum(total, product) {
+  console.log(total.price, product);
+  return total + product.price;
+}
+var calculateTotalPrice = function(){
+  return products.reduce(getSum, 0)
+}
+
+console.log(calculateTotalPrice());
+ 
 
 var shopFromStore =  function () {
   var refNr = askUserForReferenceNumber();

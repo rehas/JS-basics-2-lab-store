@@ -7,11 +7,11 @@
 // X 2a. Check with console log if the cart gets updated correctly
 // X 3. Print out the contents of the shoppingCart -> reuse displayProductsFromShoppingCart
 // X 3. Note: Had to write some code to clear the items that are currently displayed
-// 4. Write a function calculateTotalPrice that calculates the total amount the user needs to pay
+// X 4. Write a function calculateTotalPrice that calculates the total amount the user needs to pay
 // X 4a. Try to use Array.reduce()
 // X 4b. Check with console log if it's working
-// 5. Display the new total price that we calculated -> reuse displayTotalPrice
-// 6. Do victory dance 
+// X 5. Display the new total price that we calculated -> reuse displayTotalPrice
+// X 6. Do victory dance 
 
 // Declare `shoppingCart`, something where you will be storing all products that the user buys.
 var shoppingCart = []

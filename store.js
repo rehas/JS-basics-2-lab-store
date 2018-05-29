@@ -1,5 +1,5 @@
 // TODO: User should be able to select a product by its referenceNumber and it will be added to the shopping cart.
-// 1. Create an inputfield to enter referenceNumber
+// X 1. Create an inputfield to enter referenceNumber -> used window.prompt, checked with console log
 
 // 2. Create ok button when clicked it calls a function addToCart -> console.log('I got clicked')
 // 2a. addToCart should be able to log the userinput (referenceNumber)
@@ -32,6 +32,8 @@ var shopFromStore =  function () {
   var refNr = askUserForReferenceNumber();
   // Add the product with the matching referenceNumber to the shoppingCart
 
+  console.log(refNr);
+
   displayProductsFromShoppingCart();
 
   // calculate the total price of your cart, and use it:
@@ -49,8 +51,7 @@ var displayProductsFromShoppingCart = function() {
 };
 
 var askUserForReferenceNumber = function() {
-  // Use window.prompt to ask the user a question and capture their response,
-  // then, return the response from this function back to our caller
+  return window.prompt('What product would you like?')
 };
 
 //

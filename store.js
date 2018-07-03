@@ -41,7 +41,7 @@ var shopFromStore =  function () {
 
 var displayProductsFromShoppingCart = function() {
   //Empty the shopping list
-  debugger;
+  // debugger;
   var shopListElement = document.getElementById('shopping-cart');
   while (shopListElement.childElementCount > 1){
     //console.log(shopListElement.firstChild.id);

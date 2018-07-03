@@ -1,7 +1,9 @@
 /* Please make it pretty, ONLY AFTER implementing ALL your Javascript! */
 
 * { box-sizing: border-box }
-
+h1,p{
+  text-align: center;
+}
 #product-overview {
   box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2);
   background-color: #f8f8f8;

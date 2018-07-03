@@ -10,7 +10,7 @@
   margin:  0 2em;
 }
 
-#product-overview h3 {
+#product-overview, h3 {
   text-align: center;
 }
 
@@ -29,6 +29,36 @@
 }
 
 #product-overview span.referenceNumber {
+  text-align: right;
+}
+
+#shopping-cart {
+  box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2);
+  background-color: #f8f8f8;
+  border-radius: 5px;
+  padding: 0.5em;
+  margin:  0 2em;
+}
+
+#shopping-cart, h3 {
+  text-align: center;
+}
+
+#shopping-cart .product:hover {
+  background-color: #eee;
+}
+
+#shopping-cart span{
+  display: inline-block;
+  width: 19%;
+  padding: 0 1rem;
+}
+
+#shopping-cart span.name{
+  width: 60%;
+}
+
+#shopping-cart span.referenceNumber {
   text-align: right;
 }
 

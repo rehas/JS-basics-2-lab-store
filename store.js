@@ -18,13 +18,17 @@ let shoppingCart = [];
 // Declare `products`, the different that you will be selling under each of the departments.
 
 var shopFromStore =  function () {
+  totalPrice = 0;
+
   var refNr = askUserForReferenceNumber();
-  console.log(`Reference number is ${refNr}`);
+  shoppingCart.push(products[products.findIndex(x => x.referenceNumber ===refNr)]);
+
+  //console.log(`Reference number is ${refNr}`);
   console.log(shoppingCart);
   // Add the product with the matching referenceNumber to the shoppingCart
 
   displayProductsFromShoppingCart();
-
+  // debugger;
   // calculate the total price of your cart, and use it:
   displayTotalPrice(totalPrice);
 
@@ -36,9 +40,18 @@ var shopFromStore =  function () {
 };
 
 var displayProductsFromShoppingCart = function() {
+  //Empty the shopping list
+  debugger;
+  var shopListElement = document.getElementById('shopping-cart');
+  while (shopListElement.childElementCount > 1){
+    //console.log(shopListElement.firstChild.id);
+    if(shopListElement.lastChild.id !== "shopCartHeader"){
+      shopListElement.removeChild(shopListElement.lastChild);
+    }
+  }
+
   // iterate over the shoppingCart and display the contents
   for(var product of shoppingCart){
-    totalPrice = 0;
     console.log("Were in shoppingCart iteration");
     console.log(product);
     // create elements for refNr, name, price, with a class and the proper innerText
@@ -76,10 +89,11 @@ var askUserForReferenceNumber = function() {
   // Use window.prompt to ask the user a question and capture their response,
   // then, return the response from this function back to our caller
   var refNum = parseInt(window.prompt("Please Enter the reference Number of the product you want to buy", "Only numbers please"));
-  shoppingCart.push(products[products.findIndex(x => x.referenceNumber ===refNum)]);
   return refNum
 };
-
+var finishShopping = function(){
+  alert(`Thanks for shopping please pay ${totalPrice} Euros on your way out!!`);
+}
 //
 // do not change the code below (but feel free to change it if your WHOLE project works!)
 //
@@ -123,7 +137,7 @@ var printProductsOnScreen = function () {
 var runApp = function () {
   printProductsOnScreen();
 
-  shopFromStore();
+  //shopFromStore();
 };
 
 document.onreadystatechange = function () {

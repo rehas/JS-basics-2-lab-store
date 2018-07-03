@@ -79,3 +79,9 @@ footer {
   right: 30%;
   text-align: center;
 }
+button{
+  text-align: center;
+  margin: 20px;
+  width: 200px;
+  height: 50px;
+}

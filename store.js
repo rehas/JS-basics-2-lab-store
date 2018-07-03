@@ -3,6 +3,7 @@
 // var products = []
 var totalPrice = 0;
 
+
 var products = [
   {department:"mats", referenceNumber: 1231, name: "Super Lite Mat", price: 10 },
   {department:"mats", referenceNumber: 1232, name: "Power Mat", price: 20 },
@@ -21,6 +22,9 @@ var shopFromStore =  function () {
   totalPrice = 0;
 
   var refNr = askUserForReferenceNumber();
+  if(refNr === undefined){
+    return
+  }
   shoppingCart.push(products[products.findIndex(x => x.referenceNumber ===refNr)]);
 
   //console.log(`Reference number is ${refNr}`);
@@ -51,6 +55,11 @@ var displayProductsFromShoppingCart = function() {
   }
 
   // iterate over the shoppingCart and display the contents
+
+  if(shoppingCart.length === 0){
+    return
+  }
+
   for(var product of shoppingCart){
     console.log("Were in shoppingCart iteration");
     console.log(product);
@@ -86,6 +95,14 @@ var displayProductsFromShoppingCart = function() {
 };
 
 var filterProducts = function(){
+
+  var departments = [
+    "mats",
+    "props",
+    "clothes",
+    "books"
+  ]  
+
   var userPrompt = `Please enter the name of the category you want to be displayed!
     mats
     props
@@ -93,10 +110,19 @@ var filterProducts = function(){
     books
     all
   `
+  
+  
+
   let query = window.prompt(userPrompt).toLowerCase();
   console.log(query);
 
+  if(query === "all" || departments.includes(query)){
+
   printProductsOnScreen(query)
+  }else{
+    alert("Please enter a valid filter");
+    return
+  }
   
 }
 
@@ -104,7 +130,20 @@ var askUserForReferenceNumber = function() {
   // Use window.prompt to ask the user a question and capture their response,
   // then, return the response from this function back to our caller
   var refNum = parseInt(window.prompt("Please Enter the reference Number of the product you want to buy", "Only numbers please"));
+  if (isNaN(refNum)){
+    alert("Please enter a number");
+    return 
+  }
+  // debugger;
+  
+  console.log("here in wrong ref num" + products.findIndex(x => x.referenceNumber ===refNum));
+
+  if(products.findIndex(x => x.referenceNumber ===refNum) === -1){
+    alert("No such item in list");
+    return
+  }
   return refNum
+
 };
 var finishShopping = function(){
   alert(`Thanks for shopping please pay ${totalPrice} Euros on your way out!!`);

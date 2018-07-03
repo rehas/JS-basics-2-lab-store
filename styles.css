@@ -4,6 +4,10 @@
 h1,p{
   text-align: center;
 }
+ol{
+  white-space: nowrap;
+    padding: 40px;
+}
 #product-overview {
   box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2);
   background-color: #f8f8f8;

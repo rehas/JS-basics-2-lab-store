@@ -4,14 +4,14 @@
 var totalPrice = 0;
 
 var products = [
-  { referenceNumber: 1231, name: "Super Lite Mat", price: 10 },
-  { referenceNumber: 1232, name: "Power Mat", price: 20 },
-  { referenceNumber: 1233, name: "Block", price: 30 },
-  { referenceNumber: 1234, name: "Meditation cushion", price: 30 },
-  { referenceNumber: 1235, name: "The best T-shirt", price: 200 },
-  { referenceNumber: 1236, name: "The cutest yoga pants", price: 300 },
-  { referenceNumber: 1237, name: "Bring Yoga To Life", price: 30 },
-  { referenceNumber: 1238, name: "Light On Yoga", price: 10 }
+  {department:"mats", referenceNumber: 1231, name: "Super Lite Mat", price: 10 },
+  {department:"mats", referenceNumber: 1232, name: "Power Mat", price: 20 },
+  {department:"props", referenceNumber: 1233, name: "Block", price: 30 },
+  {department:"props", referenceNumber: 1234, name: "Meditation cushion", price: 30 },
+  {department:"clothes", referenceNumber: 1235, name: "The best T-shirt", price: 200 },
+  {department:"clothes", referenceNumber: 1236, name: "The cutest yoga pants", price: 300 },
+  {department:"books", referenceNumber: 1237, name: "Bring Yoga To Life", price: 30 },
+  {department:"books", referenceNumber: 1238, name: "Light On Yoga", price: 10 }
 ]
 // Declare `shoppingCart`, something where you will be storing all products that the user buys.
 let shoppingCart = [];
@@ -85,6 +85,21 @@ var displayProductsFromShoppingCart = function() {
   // use the printProductsOnScreen function for inspiration
 };
 
+var filterProducts = function(){
+  var userPrompt = `Please enter the name of the category you want to be displayed!
+    mats
+    props
+    clothes
+    books
+    all
+  `
+  let query = window.prompt(userPrompt).toLowerCase();
+  console.log(query);
+
+  printProductsOnScreen(query)
+  
+}
+
 var askUserForReferenceNumber = function() {
   // Use window.prompt to ask the user a question and capture their response,
   // then, return the response from this function back to our caller
@@ -103,8 +118,19 @@ var displayTotalPrice = function (amount = 0) {
   console.log(document.getElementById('total-price').innerText);
 };
 
-var printProductsOnScreen = function () {
+var printProductsOnScreen = function (query = "all") {
+
+  var productListElement = document.getElementById('product-overview');
+  while (productListElement.childElementCount > 1){
+    //console.log(shopListElement.firstChild.id);
+    if(productListElement.lastChild.id !== "productList"){
+       productListElement.removeChild(productListElement.lastChild);
+    }
+  }  
+  
+
   for(var product of products){
+
 
     // create elements for refNr, name, price, with a class and the proper innerText
     var referenceNumberElement = document.createElement('span');
@@ -128,9 +154,9 @@ var printProductsOnScreen = function () {
     productElement.appendChild(priceElement);
 
     // Hang that div on the page
+    if (query === "all" || query === product.department){
     document.getElementById('product-overview').appendChild(productElement);
-
-
+    }
   }
 };
 
